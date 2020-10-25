@@ -1,0 +1,12 @@
+name: Team awesome's approval workflow
+on: pull_request_review
+jobs:
+  labelWhenApproved:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add label when approved
+        uses: pullreminders/label-when-approved-action@master
+        env:
+          APPROVALS: "2"
+          ADD_LABEL: "approved"
+          REMOVE_LABEL: "awaiting%20review"
