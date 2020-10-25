@@ -25,7 +25,10 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix:
+      - uses: actions/upload-artifact@master
+        with:
+          name: webpack artifacts
+          path: public/
         os: [ubuntu-latest, windows-2016]
         node-version: [12.x, 14.x]
 
