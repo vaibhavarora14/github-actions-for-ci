@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      - uses: actions/upload-artifact@master
+    needs: build
         with:
           name: webpack artifacts
           path: public/
